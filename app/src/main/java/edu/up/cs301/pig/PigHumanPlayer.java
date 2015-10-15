@@ -30,6 +30,8 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
     private TextView    messageTextView     = null;
     private ImageButton dieImageButton      = null;
     private Button      holdButton          = null;
+    private Button      easyButton          = null;
+    private Button      hardButton          = null;
 
     // the android activity that we are running
     private GameMainActivity myActivity;

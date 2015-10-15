@@ -42,6 +42,10 @@ public class PigMainActivity extends GameMainActivity {
             public GamePlayer createPlayer(String name) {
                 return new PigComputerPlayer(name);
             }});
+        playerTypes.add(new GamePlayerType("Computer Player Hard") {
+            public GamePlayer createPlayer(String name) {
+                return new SmartPigComputerPlayer(name);
+            }});
 
         // Create a game configuration class for Counter:
         GameConfig defaultConfig = new GameConfig(playerTypes, 1, 2, "Pig", PORT_NUMBER);

@@ -19,7 +19,7 @@ public class PigGameState extends GameState {
         score2 = 0;
         runningScore = 0;
         dieValue = 1;
-        playerID = 1;
+        playerID = 0;
     }
 
     public PigGameState(PigGameState pigGameState) {
@@ -28,7 +28,6 @@ public class PigGameState extends GameState {
         runningScore = pigGameState.getRunningScore();
         dieValue = pigGameState.getDieValue();
         playerID = pigGameState.getID();
-
         pigGameState1 = pigGameState;
     }
 
@@ -46,6 +45,19 @@ public class PigGameState extends GameState {
         }
         else if(playerID == 1) {
             score2 += runningScore;
+            runningScore = 0;
+            playerID = 0;
+        }
+    }
+
+    public void onHoldHard() {
+        if(playerID == 0) {
+            score1 += runningScore;
+            runningScore = 0;
+            playerID = 1;
+        }
+        else if(playerID == 1) {
+            score2 += runningScore+5;
             runningScore = 0;
             playerID = 0;
         }
